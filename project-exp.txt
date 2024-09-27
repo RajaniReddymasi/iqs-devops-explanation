@@ -9,3 +9,19 @@
 ->At last you have deployed the application to the EKS cluster.
 ->Hope this gives you a better understanding of how to integrate all the tools together.
 
+
+cluster upgrade:
+1. blue and green nodes should be available
+2. traffic will be available only in any of the nodes either in blue or green
+3. the new nodes for example green are new then we should cordon(not ready for scheduling) the nodes
+4.new nodes should cordon as this green nodes will not have any pods
+(scenario:if any issue with control plane , we dont see any issue for application. 
+Bcz nodes are associated with alb, 
+new deployments will fail if control plane is down and existing app will not cause any issue if control plane is down)
+5. once cluster updated, green nodes also update it.
+6. uncordon green nodes
+7. drain the blues nodes
+
+
+
+
