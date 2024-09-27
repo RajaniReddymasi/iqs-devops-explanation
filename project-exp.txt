@@ -1,6 +1,11 @@
-Using Jenkins and its shared libraries you have ensured that your application code is bug-free and secure too.
-Later on you build the image and push the image to a private ECR using Docker.
-Then using terraform you have created the necessary infrastructure such as a VPC, SGs, EKS, ALB, RDS, ACM,
-Workstation etc for your application deployment.
-At last you have deployed the application to the EKS cluster.
-Hope this gives you a better understanding of how to integrate all the tools together.
+->Using Jenkins and its shared libraries you have ensured that your application code is bug-free and secure too.
+->Later on you build the image and push the image to a private ECR using Docker.
+->Then using terraform you have created the necessary infrastructure such as a VPC, SGs, ALB, RDS, ACM.
+->We have created the eks using terraform and cluster upgrades also we did it using terraform.
+ we have to update aws kube config in workstation which use for application deployment.  
+ (aws eks update-kubeconfig --region us-east-1 expense-dev)
+ (post running this command will get .kube folder and which we have authencation and authorisation)
+->Workstation etc for your application deployment.
+->At last you have deployed the application to the EKS cluster.
+->Hope this gives you a better understanding of how to integrate all the tools together.
+
