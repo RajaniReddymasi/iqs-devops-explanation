@@ -18,6 +18,10 @@ we redirect the the traffic from ingreess by changing the service to green, load
 github-jenkins(container/ECR/helm chats   sonarcube-code vulnarabilities)
 
 ->Using Jenkins and its shared libraries we have ensured that your application code is bug-free and secure too.
+by using quality gates (code quality )
+sonar cube - code quality/vulnerabilities
+trivyscan - containers
+
 ->Later on you build the image and push the image to a private ECR using Docker.
 ->Then using terraform you have created the necessary infrastructure such as a VPC, SGs, ALB, RDS, ACM.
 ->We have created the eks using terraform and cluster upgrades also we did it using terraform.
