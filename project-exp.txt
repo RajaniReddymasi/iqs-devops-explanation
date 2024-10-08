@@ -1,3 +1,22 @@
+comming to daily activities our project is like financial sector its hihgly secure. so we are following mostly blue green deployment
+
+1. rolling updates  : rolling update have no zero downtime
+ex: you have 4 replicas for 1 application and when you deploying new version first out 4, 1 will change to new 
+_____________________
+
+2. this we can keep when we create a canary service canary: 5% of production users in ingress service 
+https://kubernetes.github.io/ingress-nginx/examples/canary/  (fyi, you will get all info)
+ingress contoller installation-ingresss service
+
+_________________________
+blue & green is safe and costly:
+will create new deployment in green nodes, 
+we redirect the the traffic from ingreess by changing the service to green, load balancer will point to green
+
+-----------------------
+
+github-jenkins(container/ECR/helm chats   sonarcube-code vulnarabilities)
+
 ->Using Jenkins and its shared libraries we have ensured that your application code is bug-free and secure too.
 ->Later on you build the image and push the image to a private ECR using Docker.
 ->Then using terraform you have created the necessary infrastructure such as a VPC, SGs, ALB, RDS, ACM.
@@ -21,6 +40,52 @@ new deployments will fail if control plane is down and existing app will not cau
 5. once cluster updated, green nodes also update it.
 6. uncordon green nodes
 7. drain the blues nodes
+
+1.st will deploy in green nodes
+2. will redirect the traffic using loadbalancer
+blue -
+green - 
+
+webhook 
+
+ps -ef 
+logs
+imagepull back off 
+crashloop 
+selectors
+
+nestat -lntp
+lsof 
+ss - tulpn
+
+merging code - PR
+git checkout main
+
+code quality - quality gates 
+sonar cube - code quality/vulnerabilities
+trivyscan - 
+
+Lamda - serverless / Cost optimisation  - need to check
+ec2 creating/destroy
+ebs 
+
+cost optimisition of lamda in ebs
+
+server is able to access internet - public - inergateway - sg /80/443 open & ssh
+appln - private subnet - ec2 - NAT Gateway 
+if server is private - sg /80/443 open & ssh
+NACL rules of inbound 
+incoming traffic - 
+outbond - download
+
+db appln - private subent 
+front -db 
+
+
+access denied - chmod/chown - grant user    
+cnmod -r 4,w3,x1
+777
+IAM role 
 
 
 
