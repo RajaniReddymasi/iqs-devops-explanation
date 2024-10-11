@@ -1,3 +1,23 @@
+hello, I'm rajani having 8+ years as sre/devops role.
+
+using terraform you have created the necessary infrastructure such as a VPC, SGs, ALB, RDS, ACM.
+->We have created the eks using terraform and cluster upgrades also we did it using terraform.
+->Using Jenkins and its shared libraries we have ensured that your application code is bug-free and secure too.
+by using quality gates (code quality )
+sonar cube - code quality/vulnerabilities
+trivyscan - containers
+
+->Later on you build the image and push the image to a private ECR using Docker.
+->Then 
+ we have to update aws kube config in workstation which use for application deployment.  
+ (aws eks update-kubeconfig --region us-east-1 expense-dev)
+ (post running this command will get .kube folder and which we have authencation and authorisation)
+
+->At last i have deployed the application to the EKS cluster.
+->Hope this gives you a better understanding of how to integrate all the tools together.
+
+github-jenkins(container/ECR/helm chats   sonarcube-code vulnarabilities)
+
 comming to daily activities our project is like financial sector its hihgly secure. so we are following mostly blue green deployment
 
 1. rolling updates  : rolling update have no zero downtime
@@ -14,24 +34,6 @@ will create new deployment in green nodes,
 we redirect the the traffic from ingreess by changing the service to green, load balancer will point to green
 
 -----------------------
-
-github-jenkins(container/ECR/helm chats   sonarcube-code vulnarabilities)
-
-->Using Jenkins and its shared libraries we have ensured that your application code is bug-free and secure too.
-by using quality gates (code quality )
-sonar cube - code quality/vulnerabilities
-trivyscan - containers
-
-->Later on you build the image and push the image to a private ECR using Docker.
-->Then using terraform you have created the necessary infrastructure such as a VPC, SGs, ALB, RDS, ACM.
-->We have created the eks using terraform and cluster upgrades also we did it using terraform.
- we have to update aws kube config in workstation which use for application deployment.  
- (aws eks update-kubeconfig --region us-east-1 expense-dev)
- (post running this command will get .kube folder and which we have authencation and authorisation)
-->Workstation etc for your application deployment.
-->At last i have deployed the application to the EKS cluster.
-->Hope this gives you a better understanding of how to integrate all the tools together.
-
 
 cluster upgrade:
 1. blue and green nodes should be available
