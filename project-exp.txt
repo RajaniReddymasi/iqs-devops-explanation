@@ -1,4 +1,15 @@
-hello, I'm rajani having 8+ years as sre/devops role.
+hello, I'm rajani having 8+ years as sre/devops role
+
+TECHNICAL SKILLS:
+
+●	Containerization: Docker, Kubernetes, Helm
+●	Cloud Platforms: AWS
+●	CI/CD Tools: Jenkins, GitHub, GitLab CI, GitHub Actions
+●	Configuration Management: Terraform, Ansible
+●	Scripting Languages: Bash
+●	Monitoring: Prometheus, Grafana, Dynatrace, Splunk.
+●	Security: SonarQube, Trivy, IAM, Load Balancer
+●	Other: EKS, EC2, S3, VPC, GKE (basic knowledge on GKE)
 
 using terraform you have created the necessary infrastructure such as a VPC, SGs, ALB, RDS, ACM.
 ->We have created the eks using terraform and cluster upgrades also we did it using terraform.
