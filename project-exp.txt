@@ -1,15 +1,15 @@
-hello, I'm rajani having 8+ years as sre/devops role
+hello, I'm rajani having 8+ years as sre/devops role,
+I'm currently working in cognizant
+I have worked in multiple domains like banking , insurance and Airline
 
 TECHNICAL SKILLS:
 
-●	Containerization: Docker, Kubernetes, Helm
-●	Cloud Platforms: AWS
-●	CI/CD Tools: Jenkins, GitHub, GitLab CI, GitHub Actions
-●	Configuration Management: Terraform, Ansible
-●	Scripting Languages: Bash
-●	Monitoring: Prometheus, Grafana, Dynatrace, Splunk.
-●	Security: SonarQube, Trivy, IAM, Load Balancer
-●	Other: EKS, EC2, S3, VPC, GKE (basic knowledge on GKE)
+VPC and VPC CIDR decided by arc
+Public which subnet have internet access, IGW
+private subnets which subnet doesnt have internet access — NAT gatewat (whic will available in public subnet)
+db servers which should not directly expose to public,
+internet gateway which assigned to VPC
+security groups, NAcls, routes
 
 using terraform you have created the necessary infrastructure such as a VPC, SGs, ALB, RDS, ACM.
 ->We have created the eks using terraform and cluster upgrades also we did it using terraform.
@@ -19,6 +19,8 @@ sonar cube - code quality/vulnerabilities
 trivyscan - containers
 
 ->Later on you build the image and push the image to a private ECR using Docker.
+
+
 ->Then 
  we have to update aws kube config in workstation which use for application deployment.  
  (aws eks update-kubeconfig --region us-east-1 expense-dev)
@@ -70,6 +72,165 @@ logs
 imagepull back off 
 crashloop 
 selectors
+
+load balancers
+classic load balancer ( which is deprecated now)
+application load balancer (path based/context based/host based — layer 7 http/htpps)
+network load balancer (milliones of reqs per second — web servers — tcp/tls, udp traffic)
+Alb as target to NLB
+
+cross accounts,
+ec2 -s3
+interface endpoints / gateway endpoints
+instead of allowing the traffic to reach the ec2 instances over the internet,
+
+2 vpcs connection — vpc peering
+2 different cidr blocs
+we have to accept the request
+we have to add the route
+
+10 vpcs — transist gateways
+
+AWS lambda — serverless architectre ,
+
+RDS — credentilas
+ssm paramets store, AWS secret manager and we can use them
+IAM role — policy
+
+load balancer — health check — ttl
+load balancer will not send traffic to unhealthy servers
+
+Autoscalling — based on demand
+lauch template
+tragets
+lister
+lister rule
+
+application is fine — 1 server is down
+
+high availability — 1 node is down 1 instance will up
+
+servers getting unhealthy — after how to check — latest deployments cause
+
+SNS — email id / slack id , it will send mails we have to subcribe them
+
+authentication — IAM
+
+r53 — dns records
+A record IPV4 — alias records
+c name — canonical ,
+load balancer dns — www. abc.com — A record -
+
+ec2 — no IGW
+gateway endpoints
+
+terraform backend
+bucket name
+key
+dynamo db table name
+
+.tf extension
+terraform init — install the backend and install the dependicies and plug ins
+terraform validate
+terraform plan
+terraform apply
+terraform destroy
+
+idempotence:
+n number of times, it will execute
+state file
+dynamo db — lock hcl file
+
+provider.tf
+variable.tf
+main.tf
+aws configure
+
+cicd
+aws secret manager — user id and password
+using datasource — will get user, password
+
+jenkins agent
+install aws cli agent, IAM role to agent/ aws configure
+
+a/c A, B — trust
+alias — provider
+
+identifier — db
+terraform traget
+terraform import
+
+scripting
+1. created shell delete the old logs
+shebang
+sourcedir
+need to validate the dir exist or not
+$? previous command
+find “$LOG_DIR” -type f -mtime +$RETENTION_DAYS -exec rm -f {} \;
+
+dev
+prepod
+uat
+ci/cd
+main — prod
+feature -dev
+jenkins — gcp
+master nodes
+worked nodes — manager jenkins-laugh via ssh
+aws to gcp
+
+jenkins agent have aws cli, aws configure, docker eks,terraform, kubectl client,
+aws eks update-kubeconfig — region us-east-1 — name expense-dev — -.kube file for authentication /authorisation
+
+k8s
+hpa
+
+docker images
+vm — its very huge memory 1 gb — unneccesry packages — separate guest os
+docker — less momory — lightweight (no ping, nestart)
+
+kubernates — isolation
+docket network
+default
+docket 0
+virtual eth
+
+brgidge network : outside
+container port
+host port
+
+multistage build
+build jdk
+
+running container jre
+
+users-ingress controller — ingress service — services — pod
+
+user r53- ingress -namespaces — services — labels/selectros
+
+services: cluser ip/ node port / loadbalancer
+
+deployment — stateless application
+
+sateful set — headless servicess — sequential
+aws csi drivers — iam role — service account
+
+service account -oidc — aws services
+
+pod to pod — services — service names
+
+ingress services — pod
+
+IQ: Networking in K8s?
+— — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+Kubernetes Networking:
+1. Pod-to-Pod Communication: Each Pod->own IP->allowing direct communication->other Pods across nodes-> cluster.
+2. Services: Kubernetes provides Services with virtual IPs (ClusterIPs) to allow access to Pods in a stable and scalable way.
+3. DNS: Kubernetes automatically assigns DNS names to Services, allowing Pods to communicate using names instead of IP addresses.
+4. Ingress: For HTTP(S) traffic, Ingress resources can route external requests to internal Services based on path or hostname.
+5. Network Policies: Kubernetes allows you to define Network Policies to control communication between Pods for security.
+6. CNI Plugins: Kubernetes uses CNI plugins to manage networking, ensuring Pods get IP addresses and can communicate across the cluster.
+
 
 nestat -lntp
 lsof 
