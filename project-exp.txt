@@ -4,48 +4,35 @@ Currently i'm working as SRE engineer in CME group.
 chicago and mercentile exchange group, which is the worlds largest marketing derivatives place.
 As pert of clearence team, working for BPS and GPS apps.
 I'm responsible for clearence apps if any issue, we will be performing a trade test from clearing apps to make sure apps are working fine.
+we are responsible for maintaining infrastructure reliability, 
+handling user issues, and managing deployments across both production and disaster recovery (DR) environments.
 
-I work as part of the SRE/Production Support team, where we are responsible for maintaining infrastructure reliability, handling user issues, and managing deployments across both production and disaster recovery (DR) environments.
-
-🔧 Handling Infrastructure Issues & User Queries:
-When users face issues during infrastructure creation (for example, through Terraform or cloud provisioning), these are raised as Tech Aide Jira tickets.
-
-We first validate the basic details provided in the ticket.
-
-If it's a known issue, we troubleshoot and guide the user with the solution.
-
-If the issue is not straightforward, we refer to the AWS documentation, follow standard resolution steps, and assist users accordingly.
-
-☁️ Disaster Recovery (DR) Activities:
+☁Disaster Recovery (DR) Activities:
 We have a DR environment that can be activated when needed.
-
 As part of the UC4 job automation setup in Kubernetes, we manage a master job plan that controls application start/stop across multiple regions.
-
 During DR activation, all applications are started simultaneously.
-
 If there are latency issues or delays in startup, we verify whether the system can clear the backlogs or recover automatically.
 
 Any failures or inconsistencies are handled in the DR environment first, and if critical, a Change Request (CR) is raised.
 
 🔄 Change Management & Automation (GitOps/CD):
 We are involved in the Change Management process, where we:
-
 Raise CRs for changes impacting production.
-
 Review, test, and deploy changes once approvals are received.
 
 We follow a GitOps approach:
+Developers make changes to the code, Jenkins piepline will trigeer
+once build pipeline get execute>unit>static code analysys>all success > docker build triggered
+and it pushed to ECR repo of GCR/ECR>
+deployment we are using GITops process using Argo Cd
+once image is build with latest changes we have ardo image updater it will update the pod image to latest one
+then argo cd will deploy the changes to kubernater.
 
-Developers make changes to the code, but the deployment is managed entirely by the SRE team.
-
+but the deployment is managed entirely by the SRE team.
 We have control over Continuous Deployment (CD). Only the SRE team has the privilege to merge and deploy changes to production.
-
 We also manage CI/CD pipelines and ensure stability during rollouts.
 
-✅ Summary:
-My role spans production support, DR management, change coordination, and automation using tools like Kubernetes, UC4, Git, and AWS. While we occasionally perform DR drills, our primary responsibility is maintaining the production environment and ensuring high availability and reliability.
 
-Let me know if you want this formatted for a resume, presentation, or interview answer.
 most of the clearing apps are in migration phase , which are moving to GKE of google cloud.
 we have entire obeservability is running in google.
 like slos, 
@@ -53,9 +40,7 @@ like slos,
 98% of API calls should finish under 3 seconds
 
 dashboards: Latency= Average Processing time, Errors and Transaction count we have
-
 alert monitoring also in place with pager duty alerts
-
 if any issue with clearing apps which are on prem checking the app status and finding the logs 
 
 i'm working i'm working on pod automation, log checkout and prober checkout.
