@@ -1,7 +1,7 @@
 hello, I'm rajani having 9 years of exp in IT industry.
 I have worked in multiple domains like banking , insurance and Airline
 Currently i'm working as SRE engineer in CME group.
-chicago and mercentile exchange group, which is the worlds largest marketing derivatives place.
+chicago and mercentile exchange group, which is the worlds largest marketing derivatives place, where people trade contracts about future prices.
 As pert of clearence team, working for BPS and GPS apps.
 I'm responsible for clearence apps if any issue, we will be performing a trade test from clearing apps to make sure apps are working fine.
 we are responsible for maintaining infrastructure reliability, 
